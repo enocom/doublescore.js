@@ -1,0 +1,12 @@
+{
+  "camelcase": true, // because it's javascript
+  "eqeqeq": true, // triple equals FTW
+  "globals": { "module": false }, // overlook Gruntfile use of module
+  "latedef": true, // prohibits use of variable before definition
+  "newcap": true, // constructors are capitalized
+  "quotmark": "double", // consistency is best
+  "strict": true,
+  "trailing": true, // trailing whitespace is bad
+  "undef": true, // prohibits use of undeclared variables
+  "unused": true // warning for defined yet unused variables
+}
