@@ -9,6 +9,7 @@
     "describe": false,
     "expect": false,
     "it": false,
+    "xit": false,
 
     // Gruntfile
     "module": false
