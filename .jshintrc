@@ -1,7 +1,18 @@
 {
   "camelcase": true, // because it's javascript
   "eqeqeq": true, // triple equals FTW
-  "globals": { "module": false }, // overlook Gruntfile use of module
+  "globals": {
+     // doublescore
+    "__": false,
+
+     // jasmine
+    "describe": false,
+    "expect": false,
+    "it": false,
+
+    // Gruntfile
+    "module": false
+  },
   "latedef": true, // prohibits use of variable before definition
   "newcap": true, // constructors are capitalized
   "quotmark": "double", // consistency is best
