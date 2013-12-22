@@ -3,7 +3,7 @@
   "eqeqeq": true, // triple equals FTW
   "globals": {
      // doublescore
-    "__": false,
+    "__": true,
 
      // jasmine
     "describe": false,
