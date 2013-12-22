@@ -16,7 +16,7 @@ describe("doublescore.js", function() {
   });
 
   describe("__.each", function() {
-    it("iterates over an array with a function for each element", function() {
+    it("iterates over an array calling a function for each item", function() {
       var obj = [1, 2, 3],
           memo = [],
           iterator = function(item) {
@@ -28,7 +28,7 @@ describe("doublescore.js", function() {
       expect(memo).toEqual([1, 2, 3]);
     });
 
-    it("takes an iterator whose arguments include an optional index", function() {
+    it("takes an iterator with an optional index", function() {
       var obj = [1, 2, 3],
           memo = {},
           iterator = function(item, index) {
