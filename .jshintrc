@@ -16,7 +16,7 @@
   "latedef": true, // prohibits use of variable before definition
   "newcap": true, // constructors are capitalized
   "quotmark": "double", // consistency is best
-  "strict": true,
+  "strict": false,
   "trailing": true, // trailing whitespace is bad
   "undef": true, // prohibits use of undeclared variables
   "unused": true // warning for defined yet unused variables
