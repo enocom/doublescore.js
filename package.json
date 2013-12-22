@@ -1,0 +1,15 @@
+{
+  "name": "doublescore.js",
+  "version": "0.0.0",
+  "description": "An underscore.js copycat",
+  "author": "Eno Compton IV",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/enocom/doublescore.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.7.2"
+  }
+}
