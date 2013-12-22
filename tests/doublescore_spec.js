@@ -39,5 +39,16 @@ describe("doublescore.js", function() {
 
       expect(memo).toEqual({1: 0, 2: 1, 3: 2});
     });
+
+    it("may reference the original object in the iterator", function() {
+      var obj = [1],
+          iterator = function(item, index, obj) {
+            obj.push("foo");
+          };
+
+      __.each(obj, iterator);
+
+      expect(obj).toEqual([1, "foo"]);
+    });
   });
 });
