@@ -17,7 +17,7 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: ["Gruntfile.js", "lib/**/*.js", "tests/**/*.js"],
-        tasks: ["jshint", "jasmine"]
+        tasks: ["jasmine"]
       }
     }
   });
@@ -28,5 +28,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-watch");
 
   // Default task
-  grunt.registerTask("default", ["jshint", "jasmine", "watch"]);
+  grunt.registerTask("default", ["jshint", "jasmine"]);
 };
