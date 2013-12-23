@@ -14,14 +14,20 @@ module.exports = function(grunt) {
         jshintrc: ".jshintrc"
       },
       all: ["Gruntfile.js", "tests/**/*.js", "lib/**/*.js"]
+    },
+    watch: {
+      scripts: {
+        files: ["Gruntfile.js", "lib/**/*.js", "tests/**/*.js"],
+        tasks: ["jshint", "jasmine"]
+      }
     }
   });
 
   // Load plugins
   grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-contrib-jasmine");
+  grunt.loadNpmTasks("grunt-contrib-watch");
 
-  grunt.registerTask("test", ["jasmine"]);
   // Default task
-  grunt.registerTask("default", ["jshint", "jasmine"]);
+  grunt.registerTask("default", ["jshint", "jasmine", "watch"]);
 };
