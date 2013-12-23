@@ -17,42 +17,42 @@ describe("doublescore.js", function() {
 
   describe("__.each", function() {
     it("iterates over an array calling a function for each item", function() {
-      var obj = [1, 2, 3],
+      var arr = [1, 2, 3],
           memo = [],
           iterator = function(item) {
             memo.push(item);
           };
 
-      __.each(obj, iterator);
+      __.each(arr, iterator);
 
       expect(memo).toEqual([1, 2, 3]);
     });
 
     it("takes an iterator with an optional index", function() {
-      var obj = [1, 2, 3],
+      var arr = [1, 2, 3],
           memo = {},
           iterator = function(item, index) {
             memo[item] = index;
           };
 
-      __.each(obj, iterator);
+      __.each(arr, iterator);
 
       expect(memo).toEqual({1: 0, 2: 1, 3: 2});
     });
 
-    it("may reference the original object in the iterator", function() {
-      var obj = [1],
+    it("may reference the original array in the iterator", function() {
+      var arr = [1],
           iterator = function(item, index, obj) {
             obj.push("foo");
           };
 
-      __.each(obj, iterator);
+      __.each(arr, iterator);
 
-      expect(obj).toEqual([1, "foo"]);
+      expect(arr).toEqual([1, "foo"]);
     });
 
     it("takes an optional context", function() {
-      var obj = ["foo"],
+      var arr = ["foo"],
           thisArg = {
             thisArgProperty: false
           },
@@ -60,7 +60,7 @@ describe("doublescore.js", function() {
             this.thisArgProperty = true;
           };
 
-      __.each(obj, iterator, thisArg);
+      __.each(arr, iterator, thisArg);
 
       expect(thisArg.thisArgProperty).toBeTruthy();
     });
