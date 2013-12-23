@@ -50,5 +50,19 @@ describe("doublescore.js", function() {
 
       expect(obj).toEqual([1, "foo"]);
     });
+
+    it("takes an optional context", function() {
+      var obj = ["foo"],
+          thisArg = {
+            thisArgProperty: false
+          },
+          iterator = function() {
+            this.thisArgProperty = true;
+          };
+
+      __.each(obj, iterator, thisArg);
+
+      expect(thisArg.thisArgProperty).toBeTruthy();
+    });
   });
 });
