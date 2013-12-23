@@ -64,5 +64,29 @@ describe("doublescore.js", function() {
 
       expect(thisArg.thisArgProperty).toBeTruthy();
     });
+
+    it("also takes an object", function() {
+      var obj = {one: 1, two: 2},
+          memo = [],
+          iterator = function(value, key, obj) {
+            memo.push(value, key, obj);
+          };
+
+      __.each(obj, iterator);
+
+      var expected = [1, "one", {one: 1, two: 2}, 2, "two", {one: 1, two: 2}];
+      expect(memo).toEqual(expected);
+    });
+
+    it("does nothing when passed null", function() {
+      var memo = [],
+          iterator = function(item) {
+            memo.push(item);
+          };
+
+      __.each(null, iterator);
+
+      expect(memo).toEqual([]);
+    });
   });
 });
