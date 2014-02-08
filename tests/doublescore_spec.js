@@ -51,20 +51,6 @@ describe("doublescore.js", function() {
       expect(arr).toEqual([1, "foo"]);
     });
 
-    it("takes an optional context", function() {
-      var arr = ["foo"],
-          thisArg = {
-            thisArgProperty: false
-          },
-          iterator = function() {
-            this.thisArgProperty = true;
-          };
-
-      __.each(arr, iterator, thisArg);
-
-      expect(thisArg.thisArgProperty).toBeTruthy();
-    });
-
     it("also takes an object", function() {
       var obj = {one: 1, two: 2},
           memo = [],
