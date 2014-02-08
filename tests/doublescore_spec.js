@@ -89,4 +89,13 @@ describe("doublescore.js", function() {
       expect(memo).toEqual([]);
     });
   });
+
+  describe("__.map", function() {
+    it("transforms a collection with a passed function", function() {
+      var addOne = function(num) { return num + 1; },
+          result = __.map([1, 2, 3], addOne);
+
+      expect(result).toEqual([2, 3, 4]);
+    });
+  });
 });
