@@ -91,10 +91,15 @@ describe("doublescore.js", function() {
   });
 
   describe("__.map", function() {
-    it("transforms a collection with a passed function", function() {
-      var addOne = function(num) { return num + 1; },
-          result = __.map([1, 2, 3], addOne);
+    var addOne = function(num) { return num + 1; };
 
+    it("transforms a collection with a function", function() {
+      var result = __.map([1, 2, 3], addOne);
+      expect(result).toEqual([2, 3, 4]);
+    });
+
+    it("transforms an object's keys with a function", function() {
+      var result = __.map({a: 1, b: 2, c: 3}, addOne);
       expect(result).toEqual([2, 3, 4]);
     });
   });
