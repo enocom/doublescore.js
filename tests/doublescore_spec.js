@@ -91,10 +91,16 @@ describe("doublescore.js", function() {
   });
 
   describe("__.reduce", function() {
+    var add = function(memo, num) { return memo + num; };
+
     it("reduces a collection with a function", function() {
-      var add = function(memo, num) { return memo + num; },
-          result = __.reduce([1, 2, 3], add);
+      var result = __.reduce([1, 2, 3], add);
       expect(result).toEqual(6);
+    });
+
+    it("accepts an initial memo value", function() {
+      var result = __.reduce([1, 2, 3], add, 10);
+      expect(result).toEqual(16);
     });
   });
 });
