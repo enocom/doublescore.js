@@ -89,4 +89,12 @@ describe("doublescore.js", function() {
       expect(result).toEqual([2, 3, 4]);
     });
   });
+
+  describe("__.reduce", function() {
+    it("reduces a collection with a function", function() {
+      var add = function(memo, num) { return memo + num; },
+          result = __.reduce([1, 2, 3], add);
+      expect(result).toEqual(6);
+    });
+  });
 });
