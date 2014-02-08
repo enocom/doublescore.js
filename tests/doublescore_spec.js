@@ -103,4 +103,14 @@ describe("doublescore.js", function() {
       expect(result).toEqual(16);
     });
   });
+
+  describe("__.filter", function() {
+    it("filters a collection given a boolean condition", function() {
+      var multipleOfTwo = function(value) { return value % 2 === 0; },
+          result;
+
+      result = __.filter([1, 2, 4, 5], multipleOfTwo);
+      expect(result).toEqual([2, 4]);
+    });
+  });
 });
