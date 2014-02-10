@@ -113,4 +113,14 @@ describe("doublescore.js", function() {
       expect(result).toEqual([2, 4]);
     });
   });
+
+  describe("__.reject", function() {
+    it("is the opposite of filter", function() {
+      var multipleOfThree = function(value) { return value % 3 === 0; },
+          result;
+
+      result = __.reject([1, 3, 4, 6, 5], multipleOfThree);
+      expect(result).toEqual([1, 4, 5]);
+    });
+  });
 });
