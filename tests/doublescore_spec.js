@@ -123,4 +123,17 @@ describe("doublescore.js", function() {
       expect(result).toEqual([1, 4, 5]);
     });
   });
+
+  describe("__.every", function() {
+    it("returns true if all elements satify a truth test", function() {
+      var greaterThanFive = function(value) { return value > 5; },
+          result;
+
+      result = __.every([7, 8, 9], greaterThanFive);
+      expect(result).toBeTruthy();
+
+      result = __.every([1, 2, 6], greaterThanFive);
+      expect(result).toBeFalsy();
+    });
+  });
 });
