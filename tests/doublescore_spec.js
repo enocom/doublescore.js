@@ -136,4 +136,17 @@ describe("doublescore.js", function() {
       expect(result).toBeFalsy();
     });
   });
+
+  describe("__.some", function() {
+    it("returns true if any element satifies a truth test", function() {
+      var isFortyTwo = function(value) { return value === 42; },
+          result;
+
+      result = __.some(["7", "foo", 42, 3], isFortyTwo);
+      expect(result).toBeTruthy();
+
+      result = __.some([1, 2, "bar"], isFortyTwo);
+      expect(result).toBeFalsy();
+    });
+  });
 });
