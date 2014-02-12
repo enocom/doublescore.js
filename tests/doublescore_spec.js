@@ -149,4 +149,17 @@ describe("doublescore.js", function() {
       expect(result).toBeFalsy();
     });
   });
+
+  describe("__.find", function() {
+   it("returns the first element which passes the truth test", function() {
+     var isEven = function(value) { return value % 2 === 0; },
+         result;
+
+     result = __.find([1, 2, 3], isEven);
+     expect(result).toEqual(2);
+
+     result = __.find([1, 3, 5], isEven);
+     expect(result).toBeUndefined();
+   });
+  });
 });
