@@ -162,4 +162,16 @@ describe("doublescore.js", function() {
      expect(result).toBeUndefined();
    });
   });
+
+  describe("__.pluck", function() {
+    it("extracts an array of values for a given property", function() {
+      var result,
+          superheroes = [{name: "Batman", secret_identity: "Bruce Wayne"},
+                         {name: "Superman", secret_identity: "Clark Kent"},
+                         {name: "Spiderman", secret_identity: "Peter Parker"}];
+
+      result = __.pluck(superheroes, "name");
+      expect(result).toEqual(["Batman", "Superman", "Spiderman"]);
+    });
+  });
 });
