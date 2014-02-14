@@ -172,6 +172,9 @@ describe("doublescore.js", function() {
 
       result = __.pluck(superheroes, "name");
       expect(result).toEqual(["Batman", "Superman", "Spiderman"]);
+
+      result = __.pluck(superheroes, "occupation");
+      expect(result).toEqual([]);
     });
   });
 });
