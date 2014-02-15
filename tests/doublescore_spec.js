@@ -178,27 +178,33 @@ describe("doublescore.js", function() {
     });
   });
 
-  describe("__.max", function() {
-    it("returns the maximum value in a list", function() {
-      expect(__.max([-1, -2, -3])).toEqual(-1);
-      expect(__.max([351, 745, 564])).toEqual(745);
+  describe("minimum and maximum", function() {
+    var frodo = {name: "Frodo", age: 26},
+        biblo = {name: "Bilbo", age: 72},
+        samwise = {name: "Samwise", age: 24},
+        hobbits = [frodo, biblo, samwise],
+        age = function(hobbit) { return hobbit.age; };
+
+    describe("__.max", function() {
+      it("returns the maximum value in a list", function() {
+        expect(__.max([-1, -2, -3])).toEqual(-1);
+        expect(__.max([351, 745, 564])).toEqual(745);
+      });
+
+      it("takes an optional iterator for comparisons", function() {
+        expect(__.max(hobbits, age)).toEqual(biblo);
+      });
     });
 
-    it("takes an optional iterator for comparisons", function() {
-      var frodo = {name: "Frodo", age: 26},
-          biblo = {name: "Bilbo", age: 72},
-          samwise = {name: "Samwise", age: 24},
-          hobbits = [frodo, biblo, samwise],
-          oldest = function(hobbit) { return hobbit.age; };
+    describe("__.min", function() {
+      it("returns the minimum value in a list", function() {
+        expect(__.min([5, 3, 9])).toEqual(3);
+        expect(__.min([-4, -1, -7])).toEqual(-7);
+      });
 
-      expect(__.max(hobbits, oldest)).toEqual(biblo);
-    });
-  });
-
-  describe("__.min", function() {
-    it("returns the minimum value in a list", function() {
-      expect(__.min([5, 3, 9])).toEqual(3);
-      expect(__.min([-4, -1, -7])).toEqual(-7);
+      it("takes an optional iterator for comparisons", function() {
+        expect(__.min(hobbits, age)).toEqual(samwise);
+      });
     });
   });
 });
