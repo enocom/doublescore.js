@@ -184,4 +184,11 @@ describe("doublescore.js", function() {
       expect(__.max([351, 745, 564])).toEqual(745);
     });
   });
+
+  describe("__.min", function() {
+    it("returns the minimum value in a list", function() {
+      expect(__.min([5, 3, 9])).toEqual(3);
+      expect(__.min([-4, -1, -7])).toEqual(-7);
+    });
+  });
 });
