@@ -177,4 +177,11 @@ describe("doublescore.js", function() {
       expect(result).toEqual([]);
     });
   });
+
+  describe("__.max", function() {
+    it("returns the maximum value in a list", function() {
+      expect(__.max([-1, -2, -3])).toEqual(-1);
+      expect(__.max([351, 745, 564])).toEqual(745);
+    });
+  });
 });
