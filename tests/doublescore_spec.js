@@ -183,6 +183,16 @@ describe("doublescore.js", function() {
       expect(__.max([-1, -2, -3])).toEqual(-1);
       expect(__.max([351, 745, 564])).toEqual(745);
     });
+
+    it("takes an optional iterator for comparisons", function() {
+      var frodo = {name: "Frodo", age: 26},
+          biblo = {name: "Bilbo", age: 72},
+          samwise = {name: "Samwise", age: 24},
+          hobbits = [frodo, biblo, samwise],
+          oldest = function(hobbit) { return hobbit.age; };
+
+      expect(__.max(hobbits, oldest)).toEqual(biblo);
+    });
   });
 
   describe("__.min", function() {
