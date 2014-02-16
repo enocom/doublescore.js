@@ -207,4 +207,10 @@ describe("doublescore.js", function() {
       });
     });
   });
+
+  describe("__.size", function() {
+    it("returns the number of values in a collection", function() {
+      expect(__.size([1, 2, 3])).toEqual(3);
+    });
+  });
 });
