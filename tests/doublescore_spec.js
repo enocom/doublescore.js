@@ -212,5 +212,9 @@ describe("doublescore.js", function() {
     it("returns the number of values in a collection", function() {
       expect(__.size([1, 2, 3])).toEqual(3);
     });
+
+    it("returns the number of keys in an object", function() {
+      expect(__.size({a: "a", b: "b", c: "c"})).toEqual(3);
+    });
   });
 });
