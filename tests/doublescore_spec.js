@@ -217,4 +217,18 @@ describe("doublescore.js", function() {
       expect(__.size({a: "a", b: "b", c: "c"})).toEqual(3);
     });
   });
+
+  describe("__.groupBy", function() {
+    it("sorts all values in a collection, keyed using a function", function() {
+      var words = ["apple", "ant", "banana", "donut"],
+          byFirstLetter = function(word) { return word[0]; },
+          expectedResult = {
+            "a": ["apple", "ant"],
+            "b": ["banana"],
+            "d": ["donut"]
+          };
+
+      expect(__.groupBy(words, byFirstLetter)).toEqual(expectedResult);
+    });
+  });
 });
