@@ -1,4 +1,7 @@
 describe("doublescore.js", function() {
+  /***************************************************
+   * Collections
+   ***************************************************/
   describe("__.keys", function() {
     it("returns an array of an object's keys", function() {
       var obj = {
@@ -243,4 +246,12 @@ describe("doublescore.js", function() {
       expect(__.groupBy(numbers, floor)).toEqual(expectedResult);
     });
   });
+
+  // Collections ToDo:
+  // reduceRight, findWhere, invoke, sortBy, indexBy, countBy, shuffle,
+  // sample, toArray
+
+  /***************************************************
+   * Arrays
+   ***************************************************/
 });
