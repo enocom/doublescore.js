@@ -230,5 +230,17 @@ describe("doublescore.js", function() {
 
       expect(__.groupBy(words, byFirstLetter)).toEqual(expectedResult);
     });
+
+    it("works on collections of numbers as well", function() {
+      var numbers = [1.3, 2.2, 1.2, 3.5],
+          floor = function(num) { return Math.floor(num); },
+          expectedResult = {
+            1: [1.3, 1.2],
+            2: [2.2],
+            3: [3.5]
+          };
+
+      expect(__.groupBy(numbers, floor)).toEqual(expectedResult);
+    });
   });
 });
