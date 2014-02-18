@@ -254,4 +254,15 @@ describe("doublescore.js", function() {
   /***************************************************
    * Arrays
    ***************************************************/
+  describe("__.flatten", function() {
+    it("flattens a nested array", function() {
+      var nested1 = [[1, [2, [3, [4]]]], 5, [6, 7]],
+          expected1 = [1, 2, 3, 4, 5, 6, 7],
+          nested2 = [5, [[[4], 3], 2], [1]],
+          expected2 = [5, 4, 3, 2, 1];
+
+      expect(__.flatten(nested1)).toEqual(expected1);
+      expect(__.flatten(nested2)).toEqual(expected2);
+    });
+  });
 });
