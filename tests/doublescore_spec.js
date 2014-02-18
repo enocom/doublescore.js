@@ -278,5 +278,9 @@ describe("doublescore.js", function() {
     it("returns the first element of an array", function() {
       expect(__.first([1, 2, 3])).toEqual(1);
     });
+
+    it("returns an optional number of items", function() {
+      expect(__.first([1, 2, 3], 2)).toEqual([1, 2]);
+    });
   });
 });
