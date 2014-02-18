@@ -265,4 +265,12 @@ describe("doublescore.js", function() {
       expect(__.flatten(nested2)).toEqual(expected2);
     });
   });
+
+  describe("__.compact", function() {
+    it("returns an array with all falsey values removed", function() {
+      var uncompacted = [false, 0, null, NaN, undefined, "", 42];
+
+      expect(__.compact(uncompacted)).toEqual([42]);
+    });
+  });
 });
