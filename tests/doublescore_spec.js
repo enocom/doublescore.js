@@ -273,4 +273,10 @@ describe("doublescore.js", function() {
       expect(__.compact(uncompacted)).toEqual([42]);
     });
   });
+
+  describe("__.first", function() {
+    it("returns the first element of an array", function() {
+      expect(__.first([1, 2, 3])).toEqual(1);
+    });
+  });
 });
