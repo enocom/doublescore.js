@@ -293,4 +293,14 @@ describe("doublescore.js", function() {
       expect(__.initial([1, 2, 3, 4], 2)).toEqual([1, 2]);
     });
   });
+
+  describe("__.last", function() {
+    it("returns the last element of an array", function() {
+      expect(__.last([1, 2, 3])).toEqual(3);
+    });
+
+    it("returns the last (optional) n elements of an array", function() {
+      expect(__.last([1, 2, 3], 2)).toEqual([2, 3]);
+    });
+  });
 });
