@@ -286,11 +286,11 @@ describe("doublescore.js", function() {
 
   describe("__.initial", function() {
     it("returns all entries but the last", function() {
-      expect(__.last([1, 2, 3])).toEqual([1, 2]);
+      expect(__.initial([1, 2, 3])).toEqual([1, 2]);
     });
 
     it("returns all entries but the last (optional) n items", function() {
-      expect(__.last([1, 2, 3, 4], 2)).toEqual([1, 2]);
+      expect(__.initial([1, 2, 3, 4], 2)).toEqual([1, 2]);
     });
   });
 });
