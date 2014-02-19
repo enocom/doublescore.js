@@ -303,4 +303,14 @@ describe("doublescore.js", function() {
       expect(__.last([1, 2, 3], 2)).toEqual([2, 3]);
     });
   });
+
+  describe("__.rest", function() {
+    it("returns all but the first element of a collection", function() {
+      expect(__.rest([1, 2, 3, 4])).toEqual([2, 3, 4]);
+    });
+
+    it("takes an optional index from which to start", function() {
+      expect(__.rest([1, 2, 3, 4], 2)).toEqual([3, 4]);
+    });
+  });
 });
