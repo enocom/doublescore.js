@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     jasmine: {
       src: "lib/**/*.js",
       options: {
-        specs: "tests/**/*.js"
+        specs: "spec/**/*.js"
       },
     },
 
@@ -14,20 +14,20 @@ module.exports = function(grunt) {
       options: {
         jshintrc: ".jshintrc"
       },
-      all: ["Gruntfile.js", "tests/**/*.js", "lib/**/*.js"]
+      all: ["Gruntfile.js", "spec/**/*.js", "lib/**/*.js"]
     },
 
     uglify: {
-      my_target: {
+      target: {
         files: {
-          'output.min.js': ['lib/doublescore.js']
+          "output.min.js": ["lib/doublescore.js"]
         }
       }
     },
 
     watch: {
       scripts: {
-        files: ["Gruntfile.js", "lib/**/*.js", "tests/**/*.js"],
+        files: ["Gruntfile.js", "lib/**/*.js", "spec/**/*.js"],
         tasks: ["jasmine"]
       }
     }
