@@ -166,6 +166,13 @@ describe("doublescore.js", function() {
    });
   });
 
+  describe("__.contains", function() {
+    it("returns true if a value is present in a list", function() {
+      expect(__.contains([1, 2], 2)).toBeTruthy();
+      expect(__.contains([1, 2], 42)).toBeFalsy();
+    });
+  });
+
   describe("__.pluck", function() {
     it("extracts an array of values for a given property", function() {
       var result,
