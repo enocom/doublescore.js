@@ -91,6 +91,11 @@ describe("collection methods (arrays and objects)", function() {
       var result = __.map({a: 1, b: 2, c: 3}, addOne);
       expect(result).toEqual([2, 3, 4]);
     });
+
+    it("calls the iterator on all the values of an object", function() {
+      var result = __.map({a: 1, b: 2, c: 3}, addOne);
+      expect(result).toEqual([2, 3, 4]);
+    });
   });
 
   describe("__.reduce", function() {
