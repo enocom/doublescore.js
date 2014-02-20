@@ -160,6 +160,11 @@ describe("collection methods (arrays and objects)", function() {
       expect(__.contains([1, 2], 2)).toBeTruthy();
       expect(__.contains([1, 2], 42)).toBeFalsy();
     });
+
+    it("returns true if a value is present in an objects keys", function() {
+      expect(__.contains({a: 1, b: 2}, 1)).toBeTruthy();
+      expect(__.contains({a: 1, b: 2}, 0)).toBeFalsy();
+    });
   });
 
   describe("__.pluck", function() {
