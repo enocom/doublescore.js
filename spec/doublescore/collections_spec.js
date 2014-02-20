@@ -2,22 +2,6 @@ describe("collection methods (arrays and objects)", function() {
   /***************************************************
    * Collections
    ***************************************************/
-  describe("__.keys", function() {
-    it("returns an array of an object's keys", function() {
-      var obj = {
-        "foo": true,
-        "bar": false
-      };
-
-      expect(__.keys(obj)).toEqual(["foo", "bar"]);
-    });
-
-    it("returns an empty array if the object is empty", function() {
-      var empty = {};
-      expect(__.keys(empty)).toEqual([]);
-    });
-  });
-
   describe("__.each", function() {
     it("iterates over an array calling a function for each item", function() {
       var arr = [1, 2, 3],
