@@ -253,10 +253,19 @@ describe("collection methods (arrays and objects)", function() {
       expect(__.invoke([[5, 4, 3], [3, 2, 1]], "sort"))
         .toEqual([[3, 4, 5], [1, 2, 3]]);
     });
+
+    it("accepts a function as well", function() {
+      var sort = function(unsortedCollection) {
+        return unsortedCollection.sort();
+      };
+
+      expect(__.invoke([[5, 4, 3], [3, 2, 1]], sort))
+        .toEqual([[3, 4, 5], [1, 2, 3]]);
+    });
   });
 
   // Collections ToDo:
-  // where, findWhere, reduceRight, findWhere, invoke, 
+  // where, findWhere, reduceRight, findWhere, invoke,
   // sortBy, indexBy, countBy, shuffle,
   // sample, toArray
 });
