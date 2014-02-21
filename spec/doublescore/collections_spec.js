@@ -248,7 +248,15 @@ describe("collection methods (arrays and objects)", function() {
     });
   });
 
+  describe("__.invoke", function() {
+    it("calls a function name on the elements of a collection", function() {
+      expect(__.invoke([[5, 4, 3], [3, 2, 1]], "sort"))
+        .toEqual([[3, 4, 5], [1, 2, 3]]);
+    });
+  });
+
   // Collections ToDo:
-  // reduceRight, findWhere, invoke, sortBy, indexBy, countBy, shuffle,
+  // where, findWhere, reduceRight, findWhere, invoke, 
+  // sortBy, indexBy, countBy, shuffle,
   // sample, toArray
 });
