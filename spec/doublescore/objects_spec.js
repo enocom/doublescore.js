@@ -25,6 +25,14 @@ describe("object methods", function() {
     });
   });
 
+  describe("__.isEmpty", function() {
+    it("returns true if object contains no values", function() {
+      expect(__.isEmpty([])).toBeTruthy();
+      expect(__.isEmpty([undefined, NaN, null])).toBeFalsy();
+      expect(__.isEmpty([1, 2, 3])).toBeFalsy();
+    });
+  });
+
   describe("__.isArray", function() {
     expect(__.isArray([])).toBeTruthy();
     expect(__.isArray({})).toBeFalsy();
