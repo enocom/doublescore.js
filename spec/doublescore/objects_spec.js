@@ -53,4 +53,11 @@ describe("object methods", function() {
       expect(__.isObject([])).toBeFalsy();
     });
   });
+
+  describe("__.isNumber", function() {
+    it("returns true if the obejct is a number", function() {
+      expect(__.isNumber(1)).toBeTruthy();
+      expect(__.isNumber([])).toBeFalsy();
+    });
+  });
 });
