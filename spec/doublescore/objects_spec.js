@@ -24,4 +24,9 @@ describe("object methods", function() {
       expect(__.values({a: 1, b: 2})).toEqual([1, 2]);
     });
   });
+
+  describe("__.isArray", function() {
+    expect(__.isArray([])).toBeTruthy();
+    expect(__.isArray({})).toBeFalsy();
+  });
 });
