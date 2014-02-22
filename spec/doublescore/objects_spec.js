@@ -46,4 +46,11 @@ describe("object methods", function() {
       expect(__.isString([])).toBeFalsy();
     });
   });
+
+  describe("__.isObject", function() {
+    it("returns true if the parameter is an object", function() {
+      expect(__.isObject({})).toBeTruthy();
+      expect(__.isObject([])).toBeFalsy();
+    });
+  });
 });
