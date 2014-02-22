@@ -34,7 +34,9 @@ describe("object methods", function() {
   });
 
   describe("__.isArray", function() {
-    expect(__.isArray([])).toBeTruthy();
-    expect(__.isArray({})).toBeFalsy();
+    it("returns true if the passed object is an Array", function() {
+      expect(__.isArray([])).toBeTruthy();
+      expect(__.isArray({})).toBeFalsy();
+    });
   });
 });
