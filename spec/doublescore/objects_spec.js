@@ -39,4 +39,11 @@ describe("object methods", function() {
       expect(__.isArray({})).toBeFalsy();
     });
   });
+
+  describe("__.isString", function() {
+    it("returns true if the passed object is a String", function() {
+      expect(__.isString("")).toBeTruthy();
+      expect(__.isString([])).toBeFalsy();
+    });
+  });
 });
