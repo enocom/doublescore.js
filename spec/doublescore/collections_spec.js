@@ -262,6 +262,15 @@ describe("collection methods (arrays and objects)", function() {
       expect(__.invoke([[5, 4, 3], [3, 2, 1]], sort))
         .toEqual([[3, 4, 5], [1, 2, 3]]);
     });
+
+    it("accepts a function and forwards variable arguments", function() {
+      var multiplyByTwoAndAdd = function(valueToMultiply, addValue) {
+        return (valueToMultiply * 2) + addValue;
+      };
+
+      expect(__.invoke([2, 3], multiplyByTwoAndAdd, 3))
+        .toEqual([7, 9]);
+    });
   });
 
   // Collections ToDo:
