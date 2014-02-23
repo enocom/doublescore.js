@@ -54,6 +54,28 @@ describe("object methods", function() {
     });
   });
 
+  describe("__.isUndefined", function() {
+    it("returns true if the parameter is undefined", function() {
+      expect(__.isUndefined(undefined)).toBeTruthy();
+      expect(__.isUndefined(nullContext.foobar)).toBeTruthy();
+    });
+
+    it("returns false for all non-undefined values", function() {
+      expect(__.isUndefined(null)).toBeFalsy();
+      expect(__.isUndefined(false)).toBeFalsy();
+      expect(__.isUndefined(NaN)).toBeFalsy();
+      expect(__.isUndefined("")).toBeFalsy();
+      expect(__.isUndefined(0)).toBeFalsy();
+    });
+  });
+
+  describe("__.isNaN", function() {
+    it("returns true if the parameter is NaN", function() {
+      expect(__.isNaN(NaN)).toBeTruthy();
+      expect(__.isNaN(undefined)).toBeFalsy();
+    });
+  });
+
   describe("__.isNumber", function() {
     it("returns true if the obejct is a number", function() {
       expect(__.isNumber(1)).toBeTruthy();
