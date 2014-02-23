@@ -60,4 +60,12 @@ describe("object methods", function() {
       expect(__.isNumber([])).toBeFalsy();
     });
   });
+
+  describe("__.isFunction", function() {
+    it("returns true if the object is a function", function() {
+      var func = function() {};
+      expect(__.isFunction(func)).toBeTruthy();
+      expect(__.isFunction([])).toBeFalsy();
+    });
+  });
 });
