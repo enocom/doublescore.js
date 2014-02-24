@@ -76,6 +76,14 @@ describe("object methods", function() {
     });
   });
 
+  describe("__.isNull", function() {
+    it("returns true if the parameter is null", function() {
+      expect(__.isNull(null)).toBeTruthy();
+      expect(__.isNull(undefined)).toBeFalsy();
+      expect(__.isNull(NaN)).toBeFalsy();
+    });
+  });
+
   describe("__.isNumber", function() {
     it("returns true if the obejct is a number", function() {
       expect(__.isNumber(1)).toBeTruthy();
