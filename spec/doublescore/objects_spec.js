@@ -57,7 +57,7 @@ describe("object methods", function() {
   describe("__.isUndefined", function() {
     it("returns true if the parameter is undefined", function() {
       expect(__.isUndefined(undefined)).toBeTruthy();
-      expect(__.isUndefined(nullContext.foobar)).toBeTruthy();
+      expect(__.isUndefined({}.foobar)).toBeTruthy();
     });
 
     it("returns false for all non-undefined values", function() {
