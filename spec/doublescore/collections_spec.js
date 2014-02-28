@@ -273,8 +273,18 @@ describe("collection methods (arrays and objects)", function() {
     });
   });
 
+  describe("__.sortBy", function() {
+    it("returns a sorted copy of a list according to an iterator", function() {
+      var unsorted = [1, 2, 3],
+          sin      = function(num) { return Math.sin(num); },
+          expected = [3, 1, 2];
+
+      expect(__.sortBy(unsorted, sin)).toEqual(expected);
+    });
+  });
+
   // Collections ToDo:
-  // where, findWhere, reduceRight, findWhere, invoke,
-  // sortBy, indexBy, countBy, shuffle,
+  // where, findWhere, reduceRight, findWhere,
+  // indexBy, countBy, shuffle,
   // sample, toArray
 });
