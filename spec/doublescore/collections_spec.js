@@ -281,6 +281,13 @@ describe("collection methods (arrays and objects)", function() {
 
       expect(__.sortBy(unsorted, sin)).toEqual(expected);
     });
+
+    it("also takes a property as an iterator", function() {
+      var unsorted = [[1, 2, 3], [1, 2], [1]],
+          expected = [[1], [1, 2], [1, 2, 3]];
+
+      expect(__.sortBy(unsorted, 'length')).toEqual(expected);
+    });
   });
 
   // Collections ToDo:
