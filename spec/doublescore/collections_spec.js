@@ -292,7 +292,7 @@ describe("collection methods (arrays and objects)", function() {
 
   describe("__.sample", function() {
     it("returns a random element from a collection", function() {
-      spyOn(Math, "random").and.returnValue("1");
+      spyOn(Math, "random").and.returnValue(1);
 
       expect(__.sample([1, 2, 3])).toEqual(2);
     });
