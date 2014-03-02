@@ -298,15 +298,15 @@ describe("collection methods (arrays and objects)", function() {
     });
 
     it("takes an optional number of desired elements", function() {
-      var i = 0,
+      var callCount = 0,
           numberGenerator = function() {
-            var firstIndex  = 1,
-                secondIndex = 0;
-            if (i === 0) {
-              i++;
-              return firstIndex;
+            var firstNumber  = 1,
+                secondNumber = 0;
+            if (callCount === 0) {
+              callCount++;
+              return firstNumber;
             }
-            return secondIndex;
+            return secondNumber;
           };
 
       spyOn(Math, "random").and.callFake(numberGenerator);
