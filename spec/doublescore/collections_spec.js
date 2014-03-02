@@ -286,15 +286,32 @@ describe("collection methods (arrays and objects)", function() {
       var unsorted = [[1, 2, 3], [1, 2], [1]],
           expected = [[1], [1, 2], [1, 2, 3]];
 
-      expect(__.sortBy(unsorted, "length")).toEqual(expected);
+        expect(__.sortBy(unsorted, "length")).toEqual(expected);
+      });
     });
-  });
 
-  describe("__.sample", function() {
-    it("returns a random element from a collection", function() {
-      spyOn(Math, "random").and.returnValue("1");
+    describe("__.sample", function() {
+      it("returns a random element from a collection", function() {
+        spyOn(Math, "random").and.returnValue("1");
 
-      expect(__.sample([1, 2, 3])).toEqual(2);
+        expect(__.sample([1, 2, 3])).toEqual(2);
+      });
+
+      it("takes an optional number of desired elements", function() {
+        var i = 0,
+        numberGenerator = function() {
+          var firstIndex = 1,
+              secondIndex = 0;
+          if (i == 0) {
+            i++;
+            return firstIndex;
+          }
+          return secondIndex;
+        };
+
+        spyOn(Math, "random").and.callFake(numberGenerator);
+
+        expect(__.sample([1, 2, 3], 2)).toEqual([2, 1]);
     });
   });
 
