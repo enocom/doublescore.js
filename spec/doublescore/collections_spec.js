@@ -312,6 +312,26 @@ describe("collection methods (arrays and objects)", function() {
       spyOn(Math, "random").and.callFake(numberGenerator);
       expect(__.sample([1, 2, 3], 2)).toEqual([2, 1]);
     });
+
+    it("returns a unique sample set without duplicates", function() {
+      // In case while generating a random index,
+      // we happen to have the same index twice,
+      // __.sample is smart enough to generate a
+      // new random index to guarantee the return
+      // value will not contain any duplicates.
+      var callCount    = 0,
+          firstNumber  = 0.5,
+          secondNumber = 0.5,
+          thirdNumber  = 0.1,
+          numberGenerator = function() {
+            if (callCount++ === 0) return firstNumber;
+            if (callCount++ === 1) return secondNumber;
+            return thirdNumber;
+          };
+      spyOn(Math, "random").and.callFake(numberGenerator);
+
+      expect(__.sample([1, 2, 3], 2)).toEqual([2, 1]);
+    });
   });
 
   // Collections ToDo:
