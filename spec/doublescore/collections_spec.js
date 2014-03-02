@@ -292,7 +292,7 @@ describe("collection methods (arrays and objects)", function() {
 
   describe("__.sample", function() {
     it("returns a random element from a collection", function() {
-      spyOn(Math, "random").and.returnValue(1);
+      spyOn(Math, "random").and.returnValue(0.5);
 
       expect(__.sample([1, 2, 3])).toEqual(2);
     });
@@ -300,8 +300,8 @@ describe("collection methods (arrays and objects)", function() {
     it("takes an optional number of desired elements", function() {
       var callCount = 0,
           numberGenerator = function() {
-            var firstNumber  = 1,
-                secondNumber = 0;
+            var firstNumber  = 0.5,
+                secondNumber = 0.1;
             if (callCount === 0) {
               callCount++;
               return firstNumber;
