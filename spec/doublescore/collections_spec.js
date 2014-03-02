@@ -297,7 +297,7 @@ describe("collection methods (arrays and objects)", function() {
       expect(__.sample([1, 2, 3])).toEqual(2);
     });
 
-    it("takes an optional number of desired elements", function() {
+    it("takes an optional sample size", function() {
       var callCount = 0,
           firstNumber  = 0.5,
           secondNumber = 0.1,
