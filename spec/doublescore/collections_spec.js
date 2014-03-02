@@ -302,10 +302,7 @@ describe("collection methods (arrays and objects)", function() {
           firstNumber  = 0.5,
           secondNumber = 0.1,
           numberGenerator = function() {
-            if (callCount === 0) {
-              callCount++;
-              return firstNumber;
-            }
+            if (callCount++ === 0) return firstNumber;
             return secondNumber;
           };
 
