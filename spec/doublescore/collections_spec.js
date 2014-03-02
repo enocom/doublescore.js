@@ -299,9 +299,9 @@ describe("collection methods (arrays and objects)", function() {
 
     it("takes an optional number of desired elements", function() {
       var callCount = 0,
+          firstNumber  = 0.5,
+          secondNumber = 0.1,
           numberGenerator = function() {
-            var firstNumber  = 0.5,
-                secondNumber = 0.1;
             if (callCount === 0) {
               callCount++;
               return firstNumber;
