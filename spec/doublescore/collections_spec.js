@@ -286,7 +286,7 @@ describe("collection methods (arrays and objects)", function() {
       var unsorted = [[1, 2, 3], [1, 2], [1]],
           expected = [[1], [1, 2], [1, 2, 3]];
 
-      expect(__.sortBy(unsorted, 'length')).toEqual(expected);
+      expect(__.sortBy(unsorted, "length")).toEqual(expected);
     });
   });
 
