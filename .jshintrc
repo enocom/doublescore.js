@@ -8,6 +8,7 @@
      // jasmine
     "describe": false,
     "expect": false,
+    "spyOn": false,
     "it": false,
     "xit": false,
 
