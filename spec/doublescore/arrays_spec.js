@@ -67,5 +67,10 @@ describe("array methods", function() {
       var result = __.without([1, 2, 3], 2);
       expect(result).toEqual([1, 3]);
     });
+
+    it("takes multiple values to remove", function() {
+      var result = __.without([1, 2, 3], 2, 3);
+      expect(result).toEqual([1]);
+    });
   });
 });
