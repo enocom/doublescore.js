@@ -61,4 +61,11 @@ describe("array methods", function() {
       expect(__.rest([1, 2, 3, 4], 2)).toEqual([3, 4]);
     });
   });
+
+  describe("__.without", function() {
+    it("returns a copy of the array with all passed args removed", function() {
+      var result = __.without([1, 2, 3], 2);
+      expect(result).toEqual([1, 3]);
+    });
+  });
 });
