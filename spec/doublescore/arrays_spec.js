@@ -73,4 +73,12 @@ describe("array methods", function() {
       expect(result).toEqual([1]);
     });
   });
+
+  describe("__.partition", function() {
+    it("splits an array into arrays satisfying a predicate and not", function() {
+      var isOdd = function(num) { return num % 2 !== 0; };
+
+      expect(__.partition([1, 2, 3, 4], isOdd)).toEqual([[1, 3], [2, 4]]);
+    });
+  });
 });
