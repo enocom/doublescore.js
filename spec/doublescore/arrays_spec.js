@@ -81,4 +81,10 @@ describe("array methods", function() {
       expect(__.partition([1, 2, 3, 4], isOdd)).toEqual([[1, 3], [2, 4]]);
     });
   });
+
+  describe("__.union", function() {
+    it("returns all unique elements in multiple arrays", function() {
+      expect(__.union([1, 2], [2, 3], [3, 4])).toEqual([1, 2, 3, 4]);
+    });
+  });
 });
