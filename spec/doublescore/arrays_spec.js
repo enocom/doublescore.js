@@ -75,7 +75,7 @@ describe("array methods", function() {
   });
 
   describe("__.partition", function() {
-    it("splits an array into arrays satisfying a predicate and not", function() {
+    it("splits an array into arrays satisfying a predicate", function() {
       var isOdd = function(num) { return num % 2 !== 0; };
 
       expect(__.partition([1, 2, 3, 4], isOdd)).toEqual([[1, 3], [2, 4]]);
@@ -85,6 +85,12 @@ describe("array methods", function() {
   describe("__.union", function() {
     it("returns all unique elements in multiple arrays", function() {
       expect(__.union([1, 2], [2, 3], [3, 4])).toEqual([1, 2, 3, 4]);
+    });
+  });
+
+  describe("__.unique", function() {
+    it("returns the unique values in an array", function() {
+      expect(__.unique([1, 2, 2, 3, 4, 2])).toEqual([1, 2, 3, 4]);
     });
   });
 });
