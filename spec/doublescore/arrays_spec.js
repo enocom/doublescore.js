@@ -93,4 +93,11 @@ describe("array methods", function() {
       expect(__.unique([1, 2, 2, 3, 4, 2])).toEqual([1, 2, 3, 4]);
     });
   });
+
+  describe("__.intersection", function() {
+    it("returns the elements common to multiple arrays", function() {
+      expect(__.intersection([1, 2], [2, 10, 1], [3, 2, 1, 10]))
+        .toEqual([1, 2]);
+    });
+  });
 });
