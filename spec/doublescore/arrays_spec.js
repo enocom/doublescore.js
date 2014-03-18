@@ -100,4 +100,11 @@ describe("array methods", function() {
         .toEqual([1, 2]);
     });
   });
+
+  describe("__.difference", function() {
+    it("returns values not present in the other arrays", function() {
+      expect(__.difference([1, 2, 3], [4, 5], [6, 7]))
+        .toEqual([1, 2, 3]);
+    });
+  });
 });
