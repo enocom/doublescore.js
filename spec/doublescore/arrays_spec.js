@@ -107,4 +107,17 @@ describe("array methods", function() {
         .toEqual([1, 2, 3]);
     });
   });
+
+  describe("__.zip", function() {
+    it("zips up a variable number of arrays", function() {
+      var abc = ["a", "b", "c"],
+          numbers = [1, 2, 3],
+          xyz = ["x", "y", "z"];
+
+      expect(__.zip(abc, numbers)).toEqual([["a", 1], ["b", 2], ["c", 3]]);
+      expect(__.zip(abc, numbers, xyz))
+        .toEqual([["a", 1, "x"], ["b", 2, "y"], ["c", 3, "z"]]);
+    });
+  });
+
 });
