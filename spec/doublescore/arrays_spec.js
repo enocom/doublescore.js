@@ -121,14 +121,22 @@ describe("array methods", function() {
   });
 
   describe("__.range", function() {
-    it("returns a range of integers up to passed number", function() {
-      expect(__.range(5)).toEqual([0, 1, 2, 3, 4]);
+    it("returns a range of integers up to a passed number", function() {
+      var stop = 5;
+      expect(__.range(stop)).toEqual([0, 1, 2, 3, 4]);
     });
 
-    it("accepts a `start` argument", function() {
+    it("accepts an optional `start` argument", function() {
       var start = 1,
           stop = 5;
       expect(__.range(start, stop)).toEqual([1, 2, 3, 4]);
+    });
+
+    it("accepts an optional third `step` argument", function() {
+      var start = 0,
+          stop = 6,
+          step = 2;
+      expect(__.range(start, stop, step)).toEqual([0, 2, 4]);
     });
   });
 
