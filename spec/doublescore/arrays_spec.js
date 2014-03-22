@@ -120,4 +120,10 @@ describe("array methods", function() {
     });
   });
 
+  describe("__.range", function() {
+    it("returns a range of integers up to passed number", function() {
+      expect(__.range(5)).toEqual([0, 1, 2, 3, 4]);
+    });
+  });
+
 });
