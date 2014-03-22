@@ -124,6 +124,12 @@ describe("array methods", function() {
     it("returns a range of integers up to passed number", function() {
       expect(__.range(5)).toEqual([0, 1, 2, 3, 4]);
     });
+
+    it("accepts a `start` argument", function() {
+      var start = 1,
+          stop = 5;
+      expect(__.range(start, stop)).toEqual([1, 2, 3, 4]);
+    });
   });
 
 });
