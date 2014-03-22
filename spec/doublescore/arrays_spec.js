@@ -138,6 +138,10 @@ describe("array methods", function() {
           step = 2;
       expect(__.range(start, stop, step)).toEqual([0, 2, 4]);
     });
+
+    it("returns an empty array if passed no arguments", function() {
+      expect(__.range()).toEqual([]);
+    });
   });
 
 });
