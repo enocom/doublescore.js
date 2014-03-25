@@ -156,5 +156,19 @@ describe("array methods", function() {
 
       expect(__.object(keys, values)).toEqual(object);
     });
+
+    it("also takes an array of key, value pairs", function() {
+      var moviesAndDirectors = [
+        ["Kubrick", "Barry Lyndon"],
+        ["Kurozawa", "Seven Samurai"],
+        ["Anderson", "The Life Aquatic with Steve Zissou"]
+      ];
+
+      expect(__.object(moviesAndDirectors)).toEqual({
+        Kubrick: "Barry Lyndon",
+        Kurozawa: "Seven Samurai",
+        Anderson: "The Life Aquatic with Steve Zissou"
+      });
+    });
   });
 });
