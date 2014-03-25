@@ -142,7 +142,19 @@ describe("array methods", function() {
     it("returns an empty array if passed no arguments", function() {
       expect(__.range()).toEqual([]);
     });
-
   });
 
+  describe("__.object", function() {
+    it("converts arrays of keys and of values into an object", function() {
+      var keys = ["Superman", "Batman", "Spiderman"],
+          values = ["Clark Kent", "Bruce Wayne", "Peter Parker"],
+          object = {
+            "Superman" : "Clark Kent",
+            "Batman"   : "Bruce Wayne",
+            "Spiderman" : "Peter Parker"
+          };
+
+      expect(__.object(keys, values)).toEqual(object);
+    });
+  });
 });
