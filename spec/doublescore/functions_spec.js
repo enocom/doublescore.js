@@ -5,4 +5,11 @@ describe("__.partial", function() {
 
     expect(addTwo(2)).toEqual(4);
   });
+
+  it("accepts multiple arguments", function() {
+    var addThreeNums = function(a, b, c) { return a + b + c; },
+        addTwoAndThree = __.partial(addThreeNums, 2, 3);
+
+    expect(addTwoAndThree(4)).toEqual(9);
+  });
 });
