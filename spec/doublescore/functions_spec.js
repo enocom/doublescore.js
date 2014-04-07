@@ -16,10 +16,11 @@ describe("__.partial", function() {
 
 describe("__.bind", function() {
   it("binds a function to an object", function() {
-    var f = function() { return "Hi " + this.name + "!"; };
+    var unboundFunction = function() { return "Hi " + this.name + "!"; },
+        boundFunction;
 
-    f = __.bind(f, { name: "Eno" });
+    boundFunction = __.bind(unboundFunction, { name: "Eno" });
 
-    expect(f()).toEqual("Hi Eno!");
+    expect(boundFunction()).toEqual("Hi Eno!");
   });
 });
