@@ -13,3 +13,13 @@ describe("__.partial", function() {
     expect(addTwoAndThree(4)).toEqual(9);
   });
 });
+
+describe("__.bind", function() {
+  it("binds a function to an object", function() {
+    var f = function() { return "Hi " + this.name + "!"; };
+
+    f = __.bind(f, { name: "Eno" });
+
+    expect(f()).toEqual("Hi Eno!");
+  });
+});
