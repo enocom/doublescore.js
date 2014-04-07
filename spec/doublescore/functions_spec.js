@@ -23,4 +23,18 @@ describe("__.bind", function() {
 
     expect(boundFunction()).toEqual("Hi Eno!");
   });
+
+  it("accepts arguments with the function to bind", function() {
+    var boundFunction,
+        unboundFunction = function(greeting) {
+          return greeting + " " + this.name;
+        },
+        context = {
+          name: "Eno"
+        };
+
+    boundFunction = __.bind(unboundFunction, context, "Hello");
+
+    expect(boundFunction()).toEqual("Hello Eno");
+  });
 });
