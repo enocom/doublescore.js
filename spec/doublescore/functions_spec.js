@@ -38,3 +38,21 @@ describe("__.bind", function() {
     expect(boundFunction()).toEqual("Hello Eno");
   });
 });
+
+describe("__.bindAll", function() {
+  it("binds an object to a function", function() {
+    var greeter = {
+      name:   "Bruce Wayne",
+      sayHi:  function() { return "Hi " + this.name; },
+      sayBye: function() { return "Bye " + this.name; },
+    },
+      thisChanger = function(func) {
+        return func();
+    };
+
+    __.bindAll(greeter, "sayHi", "sayBye");
+
+    expect(thisChanger(greeter.sayHi)).toEqual("Hi Bruce Wayne");
+    expect(thisChanger(greeter.sayBye)).toEqual("Bye Bruce Wayne");
+  });
+});
