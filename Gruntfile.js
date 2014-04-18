@@ -17,14 +17,6 @@ module.exports = function(grunt) {
       all: ["Gruntfile.js", "spec/**/*.js", "lib/**/*.js"]
     },
 
-    uglify: {
-      target: {
-        files: {
-          "output.min.js": ["lib/doublescore.js"]
-        }
-      }
-    },
-
     watch: {
       scripts: {
         files: ["Gruntfile.js", "lib/**/*.js", "spec/**/*.js"],
@@ -37,7 +29,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-jshint");
   grunt.loadNpmTasks("grunt-contrib-jasmine");
   grunt.loadNpmTasks("grunt-contrib-watch");
-  grunt.loadNpmTasks("grunt-contrib-uglify");
 
   // Default task
   grunt.registerTask("default", ["jshint", "jasmine"]);
